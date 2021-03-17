@@ -894,19 +894,19 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@chakra-ui/nuxt@^0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/nuxt/-/nuxt-0.2.4.tgz#7af574b8b04f7e325a192db03b37ed1ea2dc7e30"
-  integrity sha512-72J+MkEH4Jpn/INYpNXpHIkbcDcIyYHTqDcJxujYAo/27QCo4QvLqEeVqCwUZCA4iZqXh6PmoJj7J9qbtzChFw==
+"@chakra-ui/nuxt@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/nuxt/-/nuxt-0.3.0.tgz#ab045826d7648d5178b9d29bbdbdd407f8ed1743"
+  integrity sha512-eEEwPjssR7R8B3Xego0/znjpYtQVPa8PoonDcF6NsdraFOk5gkNylTAQITmJU9ck0FW177He+g4VtQnQlH1npA==
   dependencies:
-    "@chakra-ui/vue" "^0.7.4"
+    "@chakra-ui/vue" "^0.8.0"
     "@emotion/css" "^11.0.0"
     chakra-loader latest
 
-"@chakra-ui/vue@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@chakra-ui/vue/-/vue-0.7.4.tgz#5205061e83939b124286ae3ae1fbbe1fba953c72"
-  integrity sha512-w1ndDzMjC81qN9vU3lV95emVu1+SVr7LeYjuEcIj30FOQf2SsudqbZsAP9rfzDFzp+Cz6o53rREdENxaBx4gRQ==
+"@chakra-ui/vue@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/vue/-/vue-0.8.0.tgz#33bbb5c26b0c7cfe06db72686a5d412c3ef0da83"
+  integrity sha512-IWPtyozgLd9qXwNhHQ5iEetez8BGATcN5gvmV/ezncbzeRJikm47v7JcZ/F8yoFfzBEzZzHqPmnpvLRGTIBLTw==
   dependencies:
     "@popperjs/core" "^2.4.0"
     "@styled-system/css" "^5.0.23"

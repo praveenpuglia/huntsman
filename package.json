@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@chakra-ui/nuxt": "^0.2.4",
+    "@chakra-ui/nuxt": "^0.3.0",
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/emotion": "^0.1.0",
