@@ -1,160 +1,64 @@
 <template>
   <div class="container">
-    <CBox
-      v-bind="mainStyles[colorMode]"
-      d="flex"
-      w="100vw"
-      h="100vh"
-      flex-dir="column"
-      justify-content="center"
-    >
-      <CHeading text-align="center" mb="4"> ⚡️ Hello chakra-ui/vue </CHeading>
-      <CFlex justify="center" direction="column" align="center">
-        <CBox mb="3">
-          <CIconButton
-            mr="3"
-            :icon="colorMode === 'light' ? 'moon' : 'sun'"
-            :aria-label="`Switch to ${
-              colorMode === 'light' ? 'dark' : 'light'
-            } mode`"
-            @click="toggleColorMode"
-          />
-          <CButton left-icon="info" variant-color="blue" @click="showToast">
-            Show Toast
-          </CButton>
+    <CGrid template-columns="16rem 1fr" h="100vh">
+      <CBox w="100%" p="4" border-right="1px solid" border-color="gray.200">
+        <CHeading display="flex" align-items="center" size="xl" mb="2" as="h1">
+          <CIcon mr="2" name="huntsman"></CIcon> Huntsman
+        </CHeading>
+        <CBox v-for="link in links" :key="link.path">
+          <CPseudoBox
+            as="nuxt-link"
+            :to="link.path"
+            p="0.2rem"
+            outline="none"
+            :_focus="{
+              shadow: 'outline',
+            }"
+            :_hover="{
+              textDecoration: 'none',
+              transform: 'translateX(3px)',
+            }"
+            transition="background-color,transform 0.15s ease-in"
+            d="block"
+            rounded="md"
+            :bg="$route.path === link.path ? 'vue.50' : 'transparent'"
+            :color="$route.path === link.path ? 'vue.700' : 'inherit'"
+            font-weight="bold"
+            font-size="sm"
+            text-decoration="none"
+          >
+            {{ link.title }}
+          </CPseudoBox>
         </CBox>
-        <CAvatarGroup>
-          <CAvatar
-            name="Evan You"
-            alt="Evan You"
-            src="https://pbs.twimg.com/profile_images/1206997998900850688/cTXTQiHm_400x400.jpg"
-          >
-            <CAvatarBadge size="1.0em" bg="green.500" />
-          </CAvatar>
-          <CAvatar
-            name="Jonathan Bakebwa"
-            alt="Jonathan Bakebwa"
-            src="https://res.cloudinary.com/xtellar/image/upload/v1572857445/me_zqos4e.jpg"
-          >
-            <CAvatarBadge size="1.0em" bg="green.500" />
-          </CAvatar>
-          <CAvatar
-            name="Segun Adebayo"
-            alt="Segun Adebayo"
-            src="https://pbs.twimg.com/profile_images/1169353373012897802/skPUWd6e_400x400.jpg"
-          >
-            <CAvatarBadge size="1.0em" bg="green.500" />
-          </CAvatar>
-          <CAvatar src="pop">
-            <CAvatarBadge size="1.0em" border-color="papayawhip" bg="tomato" />
-          </CAvatar>
-        </CAvatarGroup>
-        <CButton
-          left-icon="close"
-          variant-color="red"
-          mt="3"
-          @click="showModal = true"
-        >
-          Delete Account
-        </CButton>
-        <CModal :is-open="showModal">
-          <CModalOverlay />
-          <CModalContent>
-            <CModalHeader>Are you sure?</CModalHeader>
-            <CModalBody>Deleting user cannot be undone</CModalBody>
-            <CModalFooter>
-              <CButton @click="showModal = false"> Cancel </CButton>
-              <CButton
-                margin-left="3"
-                variant-color="red"
-                @click="showModal = false"
-              >
-                Delete User
-              </CButton>
-            </CModalFooter>
-            <CModalCloseButton @click="showModal = false" />
-          </CModalContent>
-        </CModal>
-      </CFlex>
-    </CBox>
+      </CBox>
+      <CBox p="4" overflow-y="auto">
+        <NuxtChild />
+      </CBox>
+    </CGrid>
   </div>
 </template>
 
-<script lang="js">
-import {
-  CBox,
-  CButton,
-  CAvatarGroup,
-  CAvatar,
-  CAvatarBadge,
-  CModal,
-  CModalContent,
-  CModalOverlay,
-  CModalHeader,
-  CModalFooter,
-  CModalBody,
-  CModalCloseButton,
-  CIconButton,
-  CFlex,
-  CHeading
-} from '@chakra-ui/vue'
-
+<script lang="ts">
+import { CGrid, CBox, CPseudoBox, CHeading, CIcon } from '@chakra-ui/vue'
 export default {
   name: 'App',
   components: {
+    CGrid,
     CBox,
-    CButton,
-    CAvatarGroup,
-    CAvatar,
-    CAvatarBadge,
-    CModal,
-    CModalContent,
-    CModalOverlay,
-    CModalHeader,
-    CModalFooter,
-    CModalBody,
-    CModalCloseButton,
-    CIconButton,
-    CFlex,
-    CHeading
+    CPseudoBox,
+    CHeading,
+    CIcon,
   },
   inject: ['$chakraColorMode', '$toggleColorMode'],
-  data () {
+  data() {
     return {
-      showModal: false,
-      mainStyles: {
-        dark: {
-          bg: 'gray.700',
-          color: 'whiteAlpha.900'
+      links: [
+        {
+          path: '/epoch-converter',
+          title: 'Epoch Converter',
         },
-        light: {
-          bg: 'white',
-          color: 'gray.900'
-        }
-      }
+      ],
     }
   },
-  computed: {
-    colorMode () {
-      return this.$chakraColorMode()
-    },
-    theme () {
-      return this.$chakraTheme()
-    },
-    toggleColorMode () {
-      return this.$toggleColorMode
-    }
-  },
-  methods: {
-    showToast () {
-      this.$toast({
-        title: 'Account created.',
-        description: "We've created your account for you.",
-        status: 'success',
-        duration: 10000,
-        isClosable: true
-      })
-    }
-  }
 }
 </script>
