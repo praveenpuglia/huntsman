@@ -28,7 +28,7 @@
     "@nuxtjs/emotion": "^0.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/svg": "^0.1.12",
-    "core-js": "^3.8.3",
+    "core-js": "^3.10.2",
     "luxon": "^1.26.0",
     "nuxt": "^2.14.12"
   },
