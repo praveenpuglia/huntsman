@@ -30,7 +30,7 @@
     "@nuxtjs/svg": "^0.1.12",
     "core-js": "^3.8.3",
     "luxon": "^1.26.0",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.15.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
